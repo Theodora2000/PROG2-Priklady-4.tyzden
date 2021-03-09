@@ -2,10 +2,11 @@
 #include <stdlib.h>
 
 int pole(int a[] ,int velkost){
-
-    for(int i=0;i<velkost;i++){
+    int i=0;
+    while(velkost!=0){
         scanf("%d", &a[i]);
-
+        i++;
+        velkost--;
     }
 
     return a;

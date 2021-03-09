@@ -1,8 +1,10 @@
 #include <stdio.h>
 
 int pole(int a[] ,int velkost){
-    for(int i=1;i<velkost;i++){
-        a[i] = i;
+    int j=0;
+    for(int i=velkost;i>0;i--){
+        a[j] = i;
+        j++;
         //printf("%d ", a[i]);
     }
 

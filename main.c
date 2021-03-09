@@ -1,11 +1,11 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 int pole(int a[] ,int velkost){
-    int j=0;
-    for(int i=velkost;i>0;i--){
-        a[j] = i;
-        j++;
-        //printf("%d ", a[i]);
+
+    for(int i=0;i<velkost;i++){
+        a[i] = rand()%10;
+
     }
 
     return a;

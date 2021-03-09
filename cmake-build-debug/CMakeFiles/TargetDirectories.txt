@@ -1,0 +1,3 @@
+C:/Users/WIN10/Desktop/FEI/4.semeter/PROG2/Cvicenie4/PROG2-Priklady-4.tyzden/cmake-build-debug/CMakeFiles/PROG2_Priklady_4_tyzden.dir
+C:/Users/WIN10/Desktop/FEI/4.semeter/PROG2/Cvicenie4/PROG2-Priklady-4.tyzden/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/WIN10/Desktop/FEI/4.semeter/PROG2/Cvicenie4/PROG2-Priklady-4.tyzden/cmake-build-debug/CMakeFiles/rebuild_cache.dir

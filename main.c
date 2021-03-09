@@ -25,7 +25,11 @@ int main() {
     //int a[]={};
 
     int velkost = 0;
-    scanf(" %d", &velkost);
+    do{
+        printf("Zadajte kladnu velkost");
+        scanf(" %d", &velkost);
+    }while(velkost<0);
+
     int a[velkost];
 
     pole(a, velkost);

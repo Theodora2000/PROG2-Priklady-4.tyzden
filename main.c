@@ -4,7 +4,7 @@
 int pole(int a[] ,int velkost){
 
     for(int i=0;i<velkost;i++){
-        a[i] = i*i;
+        scanf("%d", &a[i]);
 
     }
 
@@ -24,7 +24,7 @@ int main() {
     for(int i=0;i<velkost;i++){
         printf("%d ", a[i]);
     }
-    printf("Sizeof: %d", sizeof (a));
+    printf("Sizeof: %d", sizeof (a)/sizeof(a[0]));
 
     return 0;
 }

@@ -4,7 +4,7 @@
 int pole(int a[] ,int velkost){
 
     for(int i=0;i<velkost;i++){
-        a[i] = rand()%10;
+        a[i] = i*i;
 
     }
 
@@ -21,7 +21,7 @@ int main() {
     int a[velkost];
 
     pole(a, velkost);
-    for(int i=1;i<velkost;i++){
+    for(int i=0;i<velkost;i++){
         printf("%d ", a[i]);
     }
     printf("Sizeof: %d", sizeof (a));

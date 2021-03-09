@@ -3,10 +3,17 @@
 
 int pole(int a[] ,int velkost){
     int i=0;
-    while(velkost!=0){
+    int cislo=0;
+    while (velkost!=0){
+
         scanf("%d", &a[i]);
+
+        if(a[i]<0){
+            continue;
+        }
         i++;
         velkost--;
+
     }
 
     return a;

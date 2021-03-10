@@ -1,30 +1,24 @@
 #include <stdio.h>
 #define MAX 5
+#include <stdbool.h>
 
 
 
 //funkcia na vypis pola, vypise z neho "dlzka" prvkov
 int print_pole( int p[], int dlzka)
 {
+    int usporiadane = 1;
 
     int i;
     for (i = 0; i <dlzka-1; i++){
         if(p[i]>p[i+1]){
-            int tmp = p[i];
-            p[i] = p[i+1];
-            p[i+1]=tmp;
-
+            usporiadane=0;
         }
 
 
     }
-    int max_druhy=0;
-    for (i = 0; i < dlzka; i++){
-        printf("%d ", p[i]);
-        max_druhy=p[i-1];
-    }
-
-    return max_druhy;
+    printf("%d", usporiadane);
+    return usporiadane;
 
 }
 
@@ -39,13 +33,17 @@ void napln(int p[], int dlzka)
 int main()
 {
     int pole[MAX] = {0};
-    int prvocisla[] = {2,8,4,6,7};
+    int prvocisla[] = {2,4,8,9};
     int dlzka = sizeof(prvocisla)/sizeof(prvocisla[0]);
 
 
-    dlzka = MAX;
 
-    printf("\nDruhy maximum %d ",print_pole(prvocisla,dlzka));
+
+    if(print_pole(prvocisla,dlzka)==1){
+        printf("Pole je usporiadane");
+    }else{
+        printf("Pole nie je usporiadane");
+    }
 
 
 

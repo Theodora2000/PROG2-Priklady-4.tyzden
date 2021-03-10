@@ -9,4 +9,6 @@
 C:/Users/WIN10/Desktop/FEI/4.semeter/PROG2/Cvicenie4/PROG2-Priklady-4.tyzden/main.c
 stdio.h
 -
+stdbool.h
+-
 

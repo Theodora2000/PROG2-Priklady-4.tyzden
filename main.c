@@ -1,42 +1,44 @@
 #include <stdio.h>
-#include <stdlib.h>
+#define MAX 10
 
-int pole(int a[] ,int velkost){
-    int i=0;
-    int cislo=0;
-    while (velkost!=0){
 
-        scanf("%d", &a[i]);
 
-        if(a[i]<0){
-            continue;
-        }
-        i++;
-        velkost--;
-
-    }
-
-    return a;
-
+//funkcia na vypis pola, vypise z neho "dlzka" prvkov
+void print_pole(const int p[], int dlzka)
+{
+    int i;
+    for (i = 0; i < dlzka; i++)
+        printf("%i\n", p[i]);
 }
 
-int main() {
+//funkcia naplni pole postupnostou cisel
+void napln(int p[], int dlzka)
+{
+    int i;
+    for (i = 0; i < dlzka; i++)
+        p[i] = i+1;
+}
 
-    //int a[]={};
+int main()
+{
+    int pole[MAX] = {0};
+    int prvocisla[] = {2,3,5,7,11,13,17,19};
+    int dlzka = sizeof(prvocisla)/sizeof(prvocisla[0]);
 
-    int velkost = 0;
-    do{
-        printf("Zadajte kladnu velkost");
-        scanf(" %d", &velkost);
-    }while(velkost<0);
+    //print_pole(prvocisla, dlzka);
 
-    int a[velkost];
+    printf("-------------------\n");
 
-    pole(a, velkost);
-    for(int i=0;i<velkost;i++){
-        printf("%d ", a[i]);
-    }
-    printf("Sizeof: %d", sizeof (a)/sizeof(a[0]));
+    //pouzitie s globalnym polom
+    dlzka = MAX;
+    printf("-------------------\n");
+    print_pole(pole,dlzka/2);
+    napln(pole,2*dlzka);
+    printf("-------------------\n");
+    print_pole(pole,dlzka);
+    printf("-------------------\n");
+    //print_pole(pole, dlzka);
+
 
     return 0;
 }

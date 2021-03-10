@@ -10,7 +10,7 @@ int print_pole(const int p[], int dlzka)
     int i;
     for (i = 0; i < dlzka; i++){
         printf("%i\n", p[i]);
-        if(p[i]<min){
+        if(p[i]>min){
             min = p[i];
         }
     }

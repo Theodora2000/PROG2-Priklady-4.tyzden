@@ -4,11 +4,20 @@
 
 
 //funkcia na vypis pola, vypise z neho "dlzka" prvkov
-void print_pole(const int p[], int dlzka)
+int print_pole(const int p[], int dlzka)
 {
+    int min= p[0];
     int i;
-    for (i = 0; i < dlzka; i++)
+    for (i = 0; i < dlzka; i++){
         printf("%i\n", p[i]);
+        if(p[i]<min){
+            min = p[i];
+        }
+    }
+
+    return min;
+
+
 }
 
 //funkcia naplni pole postupnostou cisel
@@ -32,12 +41,9 @@ int main()
     //pouzitie s globalnym polom
     dlzka = MAX;
     printf("-------------------\n");
-    print_pole(pole,dlzka/2);
-    napln(pole,2*dlzka);
+    print_pole(prvocisla,dlzka/2);
     printf("-------------------\n");
-    print_pole(pole,dlzka);
-    printf("-------------------\n");
-    //print_pole(pole, dlzka);
+    printf("Minimum: %d", print_pole(prvocisla,dlzka/2));
 
 
     return 0;

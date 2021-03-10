@@ -1,22 +1,30 @@
 #include <stdio.h>
-#define MAX 10
+#define MAX 5
 
 
 
 //funkcia na vypis pola, vypise z neho "dlzka" prvkov
-double print_pole(const int p[], int dlzka)
+int print_pole( int p[], int dlzka)
 {
-    int suma =0;
-    int pocet=0;
+
     int i;
+    for (i = 0; i <dlzka-1; i++){
+        if(p[i]>p[i+1]){
+            int tmp = p[i];
+            p[i] = p[i+1];
+            p[i+1]=tmp;
+
+        }
+
+
+    }
+    int max_druhy=0;
     for (i = 0; i < dlzka; i++){
-        printf("%i\n", p[i]);
-        suma+=p[i];
-        pocet++;
+        printf("%d ", p[i]);
+        max_druhy=p[i-1];
     }
 
-    return suma/(double)pocet;
-
+    return max_druhy;
 
 }
 
@@ -31,19 +39,14 @@ void napln(int p[], int dlzka)
 int main()
 {
     int pole[MAX] = {0};
-    int prvocisla[] = {2,3,5,7,11,13,17,19};
+    int prvocisla[] = {2,8,4,6,7};
     int dlzka = sizeof(prvocisla)/sizeof(prvocisla[0]);
 
-    //print_pole(prvocisla, dlzka);
 
-    printf("-------------------\n");
-
-    //pouzitie s globalnym polom
     dlzka = MAX;
-    printf("-------------------\n");
-    print_pole(prvocisla,dlzka/2);
-    printf("-------------------\n");
-    printf("Minimum: %.4lf", print_pole(prvocisla,dlzka/2));
+
+    printf("\nDruhy maximum %d ",print_pole(prvocisla,dlzka));
+
 
 
     return 0;

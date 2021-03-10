@@ -4,18 +4,18 @@
 
 
 //funkcia na vypis pola, vypise z neho "dlzka" prvkov
-int print_pole(const int p[], int dlzka)
+double print_pole(const int p[], int dlzka)
 {
-    int min= p[0];
+    int suma =0;
+    int pocet=0;
     int i;
     for (i = 0; i < dlzka; i++){
         printf("%i\n", p[i]);
-        if(p[i]>min){
-            min = p[i];
-        }
+        suma+=p[i];
+        pocet++;
     }
 
-    return min;
+    return suma/(double)pocet;
 
 
 }
@@ -43,7 +43,7 @@ int main()
     printf("-------------------\n");
     print_pole(prvocisla,dlzka/2);
     printf("-------------------\n");
-    printf("Minimum: %d", print_pole(prvocisla,dlzka/2));
+    printf("Minimum: %.4lf", print_pole(prvocisla,dlzka/2));
 
 
     return 0;

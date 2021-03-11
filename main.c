@@ -10,10 +10,16 @@ int print_pole( int p[], int dlzka)
 
 
     int i;
+    int j=dlzka-1;
+
     for (i = 0; i <dlzka; i++){
-        if(p[i]<0){
-            p[i]=-(p[i]);
+        int tmp = p[i];
+        p[i]=p[j];
+        p[j]=tmp;
+        if(i+1==dlzka/2){
+            break;
         }
+        j--;
 
 
     }

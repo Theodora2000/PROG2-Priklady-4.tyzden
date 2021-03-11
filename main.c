@@ -9,12 +9,19 @@ int print_pole( int p[], int dlzka, int x)
 {
     int i;
     int j=0;
-    for (i = dlzka; i >0; i--){
-        p[i]=p[i-1];
-    }
-    p[0]=x;
-
     for (i = 0; i <=dlzka; i++){
+        if(p[i]==x){
+
+            break;
+        }
+        if(i==dlzka){
+            p[i]=x;
+            dlzka=dlzka+1;
+        }
+    }
+    ;
+
+    for (i = 0; i <dlzka; i++){
         printf("%d ", p[i]);
 
 
@@ -36,8 +43,8 @@ int main()
     int prvocisla[] = {2,-5,8,-9};
     int dlzka = sizeof(prvocisla)/sizeof(prvocisla[0]);
     int i=0;
-    int novy_pocet_p=print_pole(prvocisla,dlzka,6);
-    printf("\nNovy pocet prvkov: %d", novy_pocet_p);
+    int novy_pocet_p=print_pole(prvocisla,dlzka,-5);
+
 
 
 

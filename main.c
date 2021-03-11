@@ -7,18 +7,18 @@
 //funkcia na vypis pola, vypise z neho "dlzka" prvkov
 int print_pole( int p[], int dlzka)
 {
-    int usporiadane = 1;
+
 
     int i;
-    for (i = 0; i <dlzka-1; i++){
-        if(p[i]>p[i+1]){
-            usporiadane=0;
+    for (i = 0; i <dlzka; i++){
+        if(p[i]<0){
+            p[i]=-(p[i]);
         }
 
 
     }
-    printf("%d", usporiadane);
-    return usporiadane;
+
+    return p;
 
 }
 
@@ -33,17 +33,19 @@ void napln(int p[], int dlzka)
 int main()
 {
     int pole[MAX] = {0};
-    int prvocisla[] = {2,4,8,9};
+    int prvocisla[] = {2,-5,8,-9};
     int dlzka = sizeof(prvocisla)/sizeof(prvocisla[0]);
+    int i=0;
+    print_pole(prvocisla,dlzka);
+    for (i = 0; i <dlzka; i++){
+        printf("%d ", prvocisla[i]);
 
 
-
-
-    if(print_pole(prvocisla,dlzka)==1){
-        printf("Pole je usporiadane");
-    }else{
-        printf("Pole nie je usporiadane");
     }
+
+
+
+
 
 
 

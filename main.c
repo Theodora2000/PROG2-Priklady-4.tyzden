@@ -5,26 +5,31 @@
 
 
 //funkcia na vypis pola, vypise z neho "dlzka" prvkov
-int print_pole( int p[], int dlzka)
+int print_pole( int p[], int dlzka, int x)
 {
 
 
     int i;
-    int j=dlzka-1;
+    int j=0;
 
     for (i = 0; i <dlzka; i++){
-        int tmp = p[i];
-        p[i]=p[j];
-        p[j]=tmp;
-        if(i+1==dlzka/2){
-            break;
-        }
-        j--;
 
+        if(p[i]>x){
+            p[i]=p[i+1];
+            j++;
+            if(i+1==dlzka-1){
+                break;
+            }
+        }
+        j++;
 
     }
 
-    return p;
+    for (i = 0; i <j; i++){
+        printf("%d ", p[i]);
+
+
+    }
 
 }
 
@@ -42,12 +47,8 @@ int main()
     int prvocisla[] = {2,-5,8,-9};
     int dlzka = sizeof(prvocisla)/sizeof(prvocisla[0]);
     int i=0;
-    print_pole(prvocisla,dlzka);
-    for (i = 0; i <dlzka; i++){
-        printf("%d ", prvocisla[i]);
+    print_pole(prvocisla,dlzka,6);
 
-
-    }
 
 
 

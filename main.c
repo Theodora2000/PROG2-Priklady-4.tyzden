@@ -12,14 +12,11 @@ int print_pole( int p[], int dlzka, int x)
     int i;
     int j=0;
 
-    for (i = 0; i <dlzka; i++){
+    for (i = 0; i <=dlzka; i++){
 
-        if(p[i]>x){
-            p[i]=p[i+1];
-            j++;
-            if(i+1==dlzka-1){
-                break;
-            }
+        if(i==dlzka){
+            p[i]=x;
+
         }
         j++;
 

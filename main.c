@@ -7,27 +7,19 @@
 //funkcia na vypis pola, vypise z neho "dlzka" prvkov
 int print_pole( int p[], int dlzka, int x)
 {
-
-
     int i;
     int j=0;
+    for (i = dlzka; i >0; i--){
+        p[i]=p[i-1];
+    }
+    p[0]=x;
 
     for (i = 0; i <=dlzka; i++){
-
-        if(i==dlzka){
-            p[i]=x;
-
-        }
-        j++;
-
-    }
-
-    for (i = 0; i <j; i++){
         printf("%d ", p[i]);
 
 
     }
-
+    return dlzka+1;
 }
 
 //funkcia naplni pole postupnostou cisel
@@ -44,8 +36,8 @@ int main()
     int prvocisla[] = {2,-5,8,-9};
     int dlzka = sizeof(prvocisla)/sizeof(prvocisla[0]);
     int i=0;
-    print_pole(prvocisla,dlzka,6);
-
+    int novy_pocet_p=print_pole(prvocisla,dlzka,6);
+    printf("\nNovy pocet prvkov: %d", novy_pocet_p);
 
 
 

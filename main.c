@@ -8,11 +8,9 @@
 int print_pole( int a[], int b[], int dlzka)
 {
     int suma=0;
-    for (int i = 0; i <=dlzka; i++){
-       if(a[i]!=b[i]){
-           printf("Nie su rovnake!\n");
-           break;
-       }
+    for (int i = 0; i < dlzka; i++){
+       a[i]=b[i];
+       printf("%d ", a[i]);
     }
 
 
@@ -35,7 +33,7 @@ int main()
     int dlzka = sizeof(prvocisla)/sizeof(prvocisla[0]);
     int i=0;
     int novy_pocet_p=print_pole(prvocisla,prvocisla1,3);
-    printf("%d", novy_pocet_p);
+
 
 
 

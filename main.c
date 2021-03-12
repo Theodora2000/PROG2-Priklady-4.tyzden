@@ -9,7 +9,10 @@ int print_pole( int a[], int b[], int dlzka)
 {
     int suma=0;
     for (int i = 0; i <=dlzka; i++){
-       suma =suma + (a[i]*b[i]);
+       if(a[i]!=b[i]){
+           printf("Nie su rovnake!\n");
+           break;
+       }
     }
 
 
